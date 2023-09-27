@@ -7,7 +7,7 @@ CREATE OR REPLACE FILE FORMAT my_csv_format
 --Create External Stage to link to files
 CREATE OR REPLACE STAGE my_s3_stage
   url='s3://oscarcasestudy/Case_Study_Datasets/'
-  credentials=(aws_key_id='AKIAS2RFP5QPCPE6LXUA' aws_secret_key='gFqVazyJbUJ1LwFtq8A2e/0i4Gh+pj2W02CCWvI8')
+  credentials=(aws_key_id= 'XXXXXXXX' aws_secret_key='XXXXXXX')
   FILE_FORMAT = my_csv_format;
 
 --Create landing table for ccs data
