@@ -39,6 +39,11 @@ SELECT count(diag1) as diag_cnt, count(*) as total_cnt from CLAIM_LINE_DETAIL;
 -- ON cd.member_id = dups.member_id
 -- AND cd.date_svc = dups.date_svc
 -- AND cd.diag1 = dups.diag1;
+--Check date distribution
+-- Should create rule based on what is reasonable
+SELECT date_svc, count(*) as cnt FROM claim_line_detail
+WHERE date_svc IS NOT NULL
+GROUP BY date_svc;
 
 -----------------------------------------------------------------
 -- Prescription Drugs DQ Tests
@@ -54,6 +59,13 @@ SELECT count(date_svc) as ds_cnt, count(*) as total_cnt from prescription_drugs;
 
 --Check for Nulls ndc
 SELECT count(ndc) as diag_cnt, count(*) as total_cnt from prescription_drugs;
+
+--Check date distribution
+--Should create rule based on what is reasonable
+SELECT date_svc, count(*) as cnt FROM prescription_drugs
+WHERE date_svc IS NOT NULL
+GROUP BY date_svc
+;
 
 -----------------------------------------------------------------
 
